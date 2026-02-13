@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Whack A Mole</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <img src="vit.png" class="vit-logo vit-top" alt="VIT Logo" />
+
+    <!-- START SCREEN -->
+    <div id="startScreen" class="start-screen">
+      <div class="start-content">
+        <h1 class="arcade-title">WHACK <span>THE MOLE</span></h1>
+
+        <p class="tagline">Are you fast enough?</p>
+
+        <div class="menu-area">
+          <select id="difficulty">
+            <option value="1000">EASY</option>
+            <option value="700">MEDIUM</option>
+            <option value="400">HARD</option>
+          </select>
+
+          <button id="startBtn">START GAME</button>
+        </div>
+      </div>
+    </div>
+    <!-- GAME SCREEN -->
+    <div id="gameScreen" class="screen hidden">
+      <div class="top-bar">
+        Score: <span id="score">0</span> | High Score:
+        <span id="highScore">0</span> | Time: <span id="time">30</span>
+      </div>
+
+      <div class="grid" id="grid"></div>
+
+      <button type="button" id="backBtn">Back to Menu</button>
+    </div>
+
+    <img src="hammer.png" id="hammer" alt="hammer" />
+    <audio id="hitSound" src="hit.mp3"></audio>
+
+    <script src="script.js"></script>
+    <!-- Bottom Center Logo -->
+    <img src="vit.png" class="vit-logo vit-bottom" alt="VIT Logo" />
+  </body>
+</html>
