@@ -368,9 +368,18 @@ body {
         margin-bottom: 120px;
     }
 
-    /* Slightly smaller logos */
+     /* Move top logo higher and make smaller */
+    .vit-top {
+        top: 8px;
+    }
+
     .vit-logo {
-        width: 80px;
+        width: 70px;
+    }
+
+    /* Push content slightly down to avoid overlap */
+    .start-screen {
+        padding-top: 80px;
     }
 }
 
