@@ -386,3 +386,12 @@ body {
 #gameScreen {
     padding-bottom: 20px;   /* creates space above bottom logo */
 }
+/* ========= MOBILE SPEED BOOST ========= */
+@media (max-width: 500px) {
+
+    .mole {
+        animation: pop 0.12s ease-in-out; /* faster pop */
+    }
+
+}
+
