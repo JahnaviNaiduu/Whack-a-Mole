@@ -321,73 +321,59 @@ body {
     bottom: 8px;
 }
 /* =========================
-   MOBILE OPTIMIZATION
-========================= */
+   MOBILE FIX ONLY
+   ========================= */
+@media (max-width: 500px) {
 
-@media (max-width: 768px) {
-
+    /* Fix grey empty space */
     body {
-        height: auto;            /* remove forced 100vh */
-        padding: 20px 0;
-        flex-direction: column;
-        justify-content: flex-start;
+        min-height: 100vh;
+        height: auto;
+        background-position: center;
+        background-size: cover;
     }
 
-    /* Title smaller */
+    /* Proper vertical alignment */
+    .start-screen {
+        min-height: 100vh;
+        justify-content: center;
+        padding: 20px 15px 140px 15px; /* extra bottom space for logo */
+    }
+
+    /* Title resize */
     .arcade-title {
-        font-size: 38px;
+        font-size: 36px;
         letter-spacing: 2px;
     }
 
+    /* Tagline resize */
     .tagline {
         font-size: 14px;
     }
 
-    /* Grid bigger and easier to tap */
-    .grid {
-        width: 95vw;
-        max-width: 320px;
-        gap: 12px;
-    }
-
-    /* Holes slightly larger */
-    .hole img {
-        width: 95%;
-        height: 95%;
-    }
-
-    /* Buttons full width for thumb usability */
-    #startBtn,
-    #backBtn {
-        width: 85%;
-        max-width: 280px;
-        font-size: 16px;
-        padding: 14px;
-    }
-
-    /* Difficulty dropdown better spacing */
+    /* Dropdown responsive */
     #difficulty {
-        width: 180px;
-        font-size: 15px;
-        padding: 12px;
+        width: 80%;
+        max-width: 260px;
     }
 
-    /* Top bar smaller */
-    .top-bar {
-        font-size: 14px;
-        margin-bottom: 10px;
+    /* Start button responsive */
+    #startBtn {
+        width: 90%;
+        max-width: 300px;
     }
 
-    /* Hammer smaller on mobile */
-    #hammer {
-        width: 45px;
+    /* Prevent back button overlap with bottom logo */
+    #backBtn {
+        margin-bottom: 120px;
     }
 
-    /* Logo smaller on phone */
+    /* Slightly smaller logos */
     .vit-logo {
-        width: 70px;
+        width: 80px;
     }
 }
+
 #gameScreen {
     padding-bottom: 20px;   /* creates space above bottom logo */
 }
