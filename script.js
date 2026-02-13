@@ -117,15 +117,27 @@ document.addEventListener("DOMContentLoaded", function () {
         let difficulty = difficultySelect.value;
         let nextSpeed;
 
-     if (difficulty == "1000") { 
-    
-         nextSpeed = Math.random() * 600 + 600;  
-       } else if (difficulty == "700") { 
-        nextSpeed = Math.random() * 500 + 500;
-           }       
-           else { 
-        nextSpeed = Math.random() * 150 + 250;
-       }
+   const isMobile = window.innerWidth <= 500;
+
+if (difficulty == "1000") {
+
+    nextSpeed = isMobile
+        ? Math.random() * 400 + 400   // 400–800ms (faster on phone)
+        : Math.random() * 600 + 600;  // 600–1200ms (desktop)
+
+} else if (difficulty == "700") {
+
+    nextSpeed = isMobile
+        ? Math.random() * 300 + 400   // 400–700ms
+        : Math.random() * 500 + 500;  // 500–1000ms
+
+} else {
+
+    nextSpeed = isMobile
+        ? Math.random() * 120 + 180   // 180–300ms
+        : Math.random() * 150 + 250;  // 250–400ms
+}
+
 
 
         moleTimeout = setTimeout(showMole, nextSpeed);
