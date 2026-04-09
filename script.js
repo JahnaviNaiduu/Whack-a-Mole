@@ -1,8 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     // API Configuration
-    const API_URL = 'http://localhost:3000/api';
-
+   // API Configuration - works locally and in production
+  const API_URL = window.location.hostname === 'localhost' || window.location.hostname ===
+  '127.0.0.1'
+      ? 'http://localhost:3000/api'  // Local development
+      : ' https://whack-a-mole-zr8j.onrender.com/api';  // Production 
+ 
+   
     // Screen elements
     const loginScreen = document.getElementById("loginScreen");
     const startScreen = document.getElementById("startScreen");

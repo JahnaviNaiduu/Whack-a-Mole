@@ -8,7 +8,15 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
-app.use(cors());
+// Allow requests from your Vercel domain
+  app.use(cors({
+      origin: [
+          'http://localhost:3000',
+          'https://your-app.vercel.app',  // You'll add this after Vercel deployment
+          /\.vercel\.app$/  // Allow all vercel preview deployments
+      ],
+      credentials: true
+  }));
 app.use(express.json());
 app.use(express.static('.')); // Serve static files from current directory
 
