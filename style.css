@@ -139,6 +139,157 @@ button, select {
     cursor: pointer;
 }
 
+/* Secondary Button Style */
+.secondary-btn {
+    background: linear-gradient(45deg, #6c757d, #8b96a0);
+    color: white;
+    padding: 12px 25px;
+    font-size: 16px;
+}
+
+.secondary-btn:hover {
+    background: linear-gradient(45deg, #5a6268, #7a8590);
+}
+
+/* Login Screen Styles */
+#usernameInput,
+#passwordInput {
+    width: 100%;
+    max-width: 300px;
+    padding: 14px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    background: #F4EBD0;
+    color: black;
+    border: 2px solid #7B2D26;
+    border-radius: 8px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+#usernameInput::placeholder,
+#passwordInput::placeholder {
+    color: #85471e;
+    opacity: 0.7;
+}
+
+#loginBtn {
+    width: 100%;
+    max-width: 300px;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: 800;
+    background: #7B2D26;
+    color: #FDFCF7;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#loginBtn:hover {
+    background: #5E201B;
+    transform: translateY(-3px);
+}
+
+.hint {
+    font-size: 12px;
+    color: #85471e;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Stats Area */
+.stats-area {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.stat-box {
+    background: rgba(123, 45, 38, 0.8);
+    padding: 15px 25px;
+    border-radius: 10px;
+    border: 2px solid #F4EBD0;
+    min-width: 120px;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #F4EBD0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    font-size: 28px;
+    font-weight: 900;
+    color: #FDFCF7;
+}
+
+/* Leaderboard Styles */
+.leaderboard-container {
+    max-width: 600px;
+    margin: 30px auto;
+    background: rgba(244, 235, 208, 0.95);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+#leaderboardTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#leaderboardTable thead {
+    background: #7B2D26;
+    color: #FDFCF7;
+}
+
+#leaderboardTable th {
+    padding: 12px;
+    text-align: left;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+#leaderboardTable td {
+    padding: 12px;
+    color: #2c1810;
+    border-bottom: 1px solid #d4c4a8;
+}
+
+#leaderboardTable tbody tr:hover {
+    background: rgba(123, 45, 38, 0.1);
+}
+
+#leaderboardTable tbody tr.current-user {
+    background: rgba(123, 45, 38, 0.2);
+    font-weight: 700;
+}
+
+#leaderboardTable th:first-child,
+#leaderboardTable td:first-child {
+    text-align: center;
+    width: 60px;
+}
+
+#leaderboardTable th:last-child,
+#leaderboardTable td:last-child {
+    text-align: center;
+    width: 80px;
+}
+
+#leaderboardBtn, #logoutBtn {
+    width: 100%;
+    max-width: 300px;
+}
+
 /* Hammer */
 #hammer {
     position: absolute;
@@ -380,6 +531,54 @@ body {
     /* Push content slightly down to avoid overlap */
     .start-screen {
         padding-top: 80px;
+    }
+
+    /* Login inputs mobile */
+    #usernameInput, #passwordInput, #loginBtn {
+        width: 90%;
+        max-width: 280px;
+    }
+
+    /* Stats area mobile */
+    .stats-area {
+        gap: 15px;
+    }
+
+    .stat-box {
+        padding: 12px 20px;
+        min-width: 100px;
+    }
+
+    .stat-value {
+        font-size: 24px;
+    }
+
+    /* Leaderboard mobile */
+    .leaderboard-container {
+        padding: 15px;
+        max-width: 95%;
+    }
+
+    #leaderboardTable th,
+    #leaderboardTable td {
+        padding: 8px 4px;
+        font-size: 13px;
+    }
+
+    #leaderboardTable th:first-child,
+    #leaderboardTable td:first-child {
+        width: 40px;
+    }
+
+    #leaderboardTable th:last-child,
+    #leaderboardTable td:last-child {
+        width: 60px;
+    }
+
+    #leaderboardBtn, #logoutBtn {
+        width: 90%;
+        max-width: 280px;
+        font-size: 15px;
     }
 }
 

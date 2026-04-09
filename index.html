@@ -9,12 +9,37 @@
   <body>
     <img src="vit.png" class="vit-logo vit-top" alt="VIT Logo" />
 
-    <!-- START SCREEN -->
-    <div id="startScreen" class="start-screen">
+    <!-- LOGIN SCREEN -->
+    <div id="loginScreen" class="start-screen">
       <div class="start-content">
         <h1 class="arcade-title">WHACK <span>THE MOLE</span></h1>
+        <p class="tagline">Login to track your high scores!</p>
 
-        <p class="tagline">Are you fast enough?</p>
+        <div class="menu-area">
+          <input type="text" id="usernameInput" placeholder="Username" maxlength="20" />
+          <input type="password" id="passwordInput" placeholder="Password" />
+          <button id="loginBtn">LOGIN / REGISTER</button>
+          <p class="hint">New users will be automatically registered</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- START SCREEN -->
+    <div id="startScreen" class="start-screen hidden">
+      <div class="start-content">
+        <h1 class="arcade-title">WHACK <span>THE MOLE</span></h1>
+        <p class="tagline">Welcome, <span id="usernameDisplay"></span>!</p>
+
+        <div class="stats-area">
+          <div class="stat-box">
+            <div class="stat-label">Your High Score</div>
+            <div class="stat-value" id="userHighScore">0</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Games Played</div>
+            <div class="stat-value" id="gamesPlayed">0</div>
+          </div>
+        </div>
 
         <div class="menu-area">
           <select id="difficulty">
@@ -24,6 +49,8 @@
           </select>
 
           <button id="startBtn">START GAME</button>
+          <button id="leaderboardBtn" class="secondary-btn">VIEW LEADERBOARD</button>
+          <button id="logoutBtn" class="secondary-btn">LOGOUT</button>
         </div>
       </div>
     </div>
@@ -37,6 +64,31 @@
       <div class="grid" id="grid"></div>
 
       <button type="button" id="backBtn">Back to Menu</button>
+    </div>
+
+    <!-- LEADERBOARD SCREEN -->
+    <div id="leaderboardScreen" class="start-screen hidden">
+      <div class="start-content">
+        <h1 class="arcade-title">LEADERBOARD</h1>
+
+        <div class="leaderboard-container">
+          <table id="leaderboardTable">
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Player</th>
+                <th>High Score</th>
+                <th>Games</th>
+              </tr>
+            </thead>
+            <tbody id="leaderboardBody">
+              <tr><td colspan="4">Loading...</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <button id="backToMenuBtn" class="secondary-btn">BACK TO MENU</button>
+      </div>
     </div>
 
     <img src="hammer.png" id="hammer" alt="hammer" />
